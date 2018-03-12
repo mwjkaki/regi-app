@@ -44,7 +44,7 @@ export class Tab1Component {
 `
 })
 
-class Tab2Component {
+export class Tab2Component {
   constructor() {
   }
 }
@@ -64,13 +64,13 @@ class Tab2Component {
 `
 })
 
-class Tab3Component {
+export class Tab3Component {
   constructor() {
   }
 }
 
 @Component({
-  selector: 'app',
+  selector: 'app-root',
   template: `
   <ons-tabbar>
     <div class="tabbar__content"></div>
@@ -97,6 +97,6 @@ export class AppComponent {
   entryComponents: [Tab1Component, Tab2Component, Tab3Component],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-class AppModule { }
+export class AppModule { }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
