@@ -45,7 +45,7 @@ export class Tab1Component {
 `
 })
 
-class Tab2Component {
+export class Tab2Component {
   constructor() {
   }
 }
@@ -65,7 +65,7 @@ class Tab2Component {
 `
 })
 
-class Tab3Component {
+export class Tab3Component {
   constructor() {
   }
 }
