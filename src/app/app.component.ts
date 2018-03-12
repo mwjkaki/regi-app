@@ -73,7 +73,7 @@ export class Tab3Component {
 @Component({
   selector: 'app-root',
   template: `
-  <ons-tabbar swipeable="true">
+  <ons-tabbar>
     <div class="tabbar__content"></div>
     <div class="tabbar">
       <ons-tab label="Page1" icon="ion-home" [page]="tab1" active></ons-tab>
