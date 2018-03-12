@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import {
   Component,
   ViewChild,
@@ -45,7 +44,7 @@ export class Tab1Component {
 `
 })
 
-export class Tab2Component {
+class Tab2Component {
   constructor() {
   }
 }
@@ -65,13 +64,13 @@ export class Tab2Component {
 `
 })
 
-export class Tab3Component {
+class Tab3Component {
   constructor() {
   }
 }
 
 @Component({
-  selector: 'app-root',
+  selector: 'app',
   template: `
   <ons-tabbar>
     <div class="tabbar__content"></div>
@@ -92,20 +91,12 @@ export class AppComponent {
 }
 
 @NgModule({
+  imports: [OnsenModule],
   declarations: [AppComponent, Tab1Component, Tab2Component, Tab3Component],
-  imports: [
-    BrowserModule,
-    OnsenModule
-  ],
-  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [Tab1Component, Tab2Component, Tab3Component],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+class AppModule { }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
-
-// export class AppComponent {
-//     rootPage = Page1Component;
-// }
