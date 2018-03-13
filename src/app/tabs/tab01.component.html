@@ -1,11 +1,12 @@
 <ons-toolbar>
-  <div class="center">レジアプリサンプル</div>
+  <div class="center">在庫データ選択</div>
 </ons-toolbar>
 <div class="background"></div>
 <div class="content" id="initial-page">
   <div style="text-align: center; margin: 10px">
-    <p>Home</p>
+    <!-- テキストファイルを選択するinput -->
+　　<input type="file" (change)="onChangeInput($event)">
 
-    <button (click)="inc()">click! {{i}}</button>
+　　<p>{{readText}}</p>
   </div>
 </div>

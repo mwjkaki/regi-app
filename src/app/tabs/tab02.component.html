@@ -1,0 +1,49 @@
+<style>
+.item_gds {
+  width: 8em;
+}
+ons-input {
+  width: 6em;
+}
+ons-input[type=number] {
+  width: 4em;
+}
+.item_sum {
+  width: 8em;
+  text-align: right;
+}
+</style>
+<ons-toolbar>
+  <div class="center">
+    レジ
+    <ons-toolbar-button>
+      <ons-icon icon="ion-checkmark-circled"><div class="tabbar__label">伝票登録</div></ons-icon>
+    </ons-toolbar-button>
+    <ons-toolbar-button>
+      <ons-icon icon="ion-close-circled"><div class="tabbar__label">キャンセル</div></ons-icon>
+    </ons-toolbar-button>
+  </div>
+</ons-toolbar>
+<div class="background"></div>
+<div class="content" id="regi-page">
+  <ons-card>　
+    <ons-list modifier="material">
+　　　<ons-list-header>商品コード:単価(変更可) × 数量(変更可) = 合計</ons-list-header>　
+      <ng-container *ngFor="let item of items">
+        <ons-list-item>
+          <div class="left">
+            <div class="item_gds">{{item.gds}}:</div>
+            <ons-input [(value)]="item.prc" modifier="underbar material"></ons-input>
+            ×
+            <ons-input [(value)]="item.cnt" modifier="underbar material" type="number"></ons-input>
+            ＝
+            <div class="item_sum">{{item.sum}}</div>
+          </div>
+        </ons-list-item>
+      </ng-container>
+    </ons-list>
+  </ons-card>
+  <ons-card>
+    <ons-button (click)="onClick()">NG23-S-WH-JK02</ons-button>
+  </ons-card>
+</div>

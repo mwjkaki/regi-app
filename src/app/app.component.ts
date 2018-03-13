@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Tab01Component } from './tabs/tab01.component';
+import { Tab02Component } from './tabs/tab02.component';
 
 @Component({
   selector: 'ons-page',
@@ -27,8 +28,9 @@ export class PageComponent {
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  home = Tab01Component
-  page = PageComponent
+  tab01 = Tab01Component
+  tab02 = Tab02Component
+  tab03 = PageComponent 
 
   constructor() { }
 }

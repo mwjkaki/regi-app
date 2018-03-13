@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+ons-input .text-input {
+  display: inline-block;
+  text-align: right;
+}
