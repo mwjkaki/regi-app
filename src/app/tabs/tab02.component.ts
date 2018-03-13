@@ -18,6 +18,7 @@ export class Butn {
 })
 export class Tab02Component {
 　public sum:number = 0;
+　public azu:number = 0;
 　public items: List[]= new Array();
   public goods: Butn[]= [{
       gcode: "テスト",
