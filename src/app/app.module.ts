@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { OnsenModule, NgModule, CUSTOM_ELEMENTS_SCHEMA } from 'ngx-onsenui';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppComponent, HomeComponent, PageComponent } from './app.component';
-
+import { AppComponent, PageComponent } from './app.component';
+import { Tab01Component } from './tabs/tab01.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    Tab01Component,
     PageComponent
   ],
   imports: [
@@ -18,7 +18,7 @@ import { AppComponent, HomeComponent, PageComponent } from './app.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [HomeComponent, PageComponent],
+  entryComponents: [Tab01Component, PageComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
   ]
