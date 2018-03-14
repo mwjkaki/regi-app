@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class Tab01Component {
   public readText: string = null;
+　public radi:string = 'rad03';
   onChangeInput(evt) {
     const file = evt.target.files[0];
     this.fileToText(file)
