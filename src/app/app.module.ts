@@ -16,6 +16,7 @@ registerLocaleData(localeJa);
   declarations: [
     AppComponent,
     NumberInputDirective,
+    NumberInputPipe,
     Tab01Component,
     Tab02Component,
     PageComponent
