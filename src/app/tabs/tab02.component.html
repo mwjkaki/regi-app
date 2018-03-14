@@ -1,31 +1,12 @@
 <style>
-.item_gds {
-  width: 7em;
-}
-ons-input {
-  width: 5em;
-}
-ons-input[type=number] {
-  width: 3em;
-}
-#azu {
-  width: 7em;
-}
-.item_sum {
-  width: 7em;
-  text-align: right;
-}
-ons-list {
-  padding-bottom: 20px;
-}
-ons-list-header {
-  margin-bottom: -30px;
-}
-ons-list-item {
-  height: 25px;
-  min-height: 25px;
-}
-
+  .item_gds { width: 6em;}
+  ons-input { width: 4em; }
+  ons-input[type=number] { width: 3em; }
+  #azu { width: 5em; }
+  .item_sum { width: 5em; text-align: right; }
+  ons-list { padding-bottom: 20px; }
+  ons-list-header { margin-bottom: -30px; }
+  ons-list-item { height: 25px; min-height: 25px; padding-left: 0px }
 </style>
 <ons-toolbar>
   <div class="center">
@@ -41,19 +22,19 @@ ons-list-item {
 <div class="background"></div>
 <div class="content" id="regi-page">
   <ons-card>　
-　　<div class="left">合計：{{sum | number}}　　預かり<ons-input id="azu" [(ngModel)]="azu" modifier="underbar material" ngDefaultControl></ons-input>　　お釣り：{{azu - sum | number}}</div>
+    <div class="left">合計：{{sum | number}}　　預かり<ons-input id="azu" [(ngModel)]="azu" modifier="underbar material" numberInput ngDefaultControl></ons-input>　　お釣り：{{azu - sum | number}}</div>
     <ons-list modifier="noborder material">
       <ons-list-header>商品コード：単価 × 数量 ＝ 合計</ons-list-header>　
       <ng-container *ngFor="let item of items; index as i">
         <ons-list-item modifier="nodivider material">
-            <ons-button (click)="delList(i)" modifier="quiet"><ons-icon icon="ion-backspace"></ons-icon></ons-button>
-            <div class="item_gds">{{item.gds}}</div>
-            ：
-            <ons-input [(ngModel)]="item.prc" modifier="underbar material" (change)="updList(i)" numberInput ngDefaultControl></ons-input>
-            ×
-            <ons-input [(ngModel)]="item.cnt" modifier="underbar material" (input)="updList(i)" type="number" ngDefaultControl></ons-input>
-            ＝
-            <div class="item_sum">{{item.sum | number}}</div>
+          <ons-button (click)="delList(i)" modifier="quiet"><ons-icon icon="ion-backspace"></ons-icon></ons-button>
+          <div class="item_gds">{{item.gds}}</div>
+          ：
+          <ons-input [(ngModel)]="item.prc" modifier="underbar material" (change)="updList(i)" ngDefaultControl></ons-input>
+          ×
+          <ons-input [(ngModel)]="item.cnt" modifier="underbar material" (input)="updList(i)" type="number" ngDefaultControl></ons-input>
+          ＝
+          <div class="item_sum">{{item.sum | number}}</div>
         </ons-list-item>
       </ng-container>
     </ons-list>

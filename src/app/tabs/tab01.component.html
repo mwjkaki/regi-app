@@ -3,9 +3,20 @@
 </ons-toolbar>
 <div class="background"></div>
 <div class="content" id="initial-page">
-　　
-    <!-- テキストファイルを選択するinput -->
-　　<input type="file" (change)="onChangeInput($event)">
+  <ons-card>　
+    <p><ons-radio input-id="rad01" modifier="material" value="rad01" [(ngModel)]="radi"> </ons-radio>
+      <label for="rad01">大会リスト読込</label>
+      <!-- テキストファイルを選択するinput -->
+      <input type="file" (change)="onChangeInput($event)">
+    </p>
 
-　　<p>{{readText}}</p>
+    <p><ons-radio input-id="rad02" modifier="material" value="rad02" [(ngModel)]="radi"> </ons-radio>
+      <label for="rad02">webから取得</label>
+    </p>
+    <p><ons-radio input-id="rad03" modifier="material" value="rad03" [(ngModel)]="radi" checked="true"> </ons-radio>
+      <label for="rad03">サンプル用</label>
+    </p>
+    <p>{{radi}}</p>
+    <p>{{readText}}</p>
+  </ons-card>　
 </div>
