@@ -1,14 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { OnsenModule, NgModule, CUSTOM_ELEMENTS_SCHEMA } from 'ngx-onsenui';
+import { OnsenModule, NgModule, CUSTOM_ELEMENTS_SCHEMA , LOCALE_ID } from 'ngx-onsenui';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent, PageComponent } from './app.component';
+import { NumberInputDirective } from './directives/number-input.directive';
+import { NumberInputPipe } from './pipes/number-input.pipe';
 import { Tab01Component } from './tabs/tab01.component';
 import { Tab02Component } from './tabs/tab02.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeJa from '@angular/common/locales/ja';
+registerLocaleData(localeJa);
 
 @NgModule({
   declarations: [
     AppComponent,
+    NumberInputDirective,
     Tab01Component,
     Tab02Component,
     PageComponent
@@ -19,7 +26,7 @@ import { Tab02Component } from './tabs/tab02.component';
     BrowserModule,
     OnsenModule
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: "ja-JP" },NumberInputPipe ],
   bootstrap: [AppComponent],
   entryComponents: [Tab01Component,Tab02Component,PageComponent],
   schemas: [

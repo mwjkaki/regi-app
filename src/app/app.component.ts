@@ -1,8 +1,4 @@
-import {
-  Component,
-  ViewChild,
-} from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { Component } from '@angular/core';
 import { Tab01Component } from './tabs/tab01.component';
 import { Tab02Component } from './tabs/tab02.component';
 
@@ -30,7 +26,7 @@ export class PageComponent {
 export class AppComponent {
   tab01 = Tab01Component
   tab02 = Tab02Component
-  tab03 = PageComponent 
+  tab03 = PageComponent
 
   constructor() { }
 }
