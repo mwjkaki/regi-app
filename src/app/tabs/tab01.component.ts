@@ -12,7 +12,7 @@ export class Tab01Component {
 
   public readText: string = null;
   public radi:string = 'rad03';
-  constructor(private goodsservice: GoodsService) { }
+  constructor(public goodsservice: GoodsService) { }
   onChangeInput(evt) {
     const file = evt.target.files[0];
     this.fileToText(file)

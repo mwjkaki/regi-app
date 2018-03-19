@@ -18,7 +18,7 @@ export class Tab02Component implements OnInit {
   public items: List[]= new Array();
   public goods: Goods[];
 
-  constructor(private goodsservice: GoodsService) { }
+  constructor(public goodsservice: GoodsService) { }
 
   ngOnInit(){}
 
