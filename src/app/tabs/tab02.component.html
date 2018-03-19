@@ -1,5 +1,5 @@
 <style>
-  .item_gds { width: 6em;}
+  .item_gds { width: 7em;}
   ons-input { width: 4em; }
   ons-input[type=number] { width: 3em; }
   #azu { width: 5em; }
@@ -40,7 +40,7 @@
     </ons-list>
   </ons-card>
   <ons-card>
-    <ng-container *ngFor="let good of goods">
+    <ng-container *ngFor="let good of goodsservice.getGoods()">
       <ons-button (click)="addList(good.gcode,good.price)">{{good.gcode}}</ons-button>
     </ng-container>
   </ons-card>

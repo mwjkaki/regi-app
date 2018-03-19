@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { Goods, GoodsService } from '../services/goods.service';
 
 export class List {
   gds: string;
@@ -6,37 +7,20 @@ export class List {
   cnt: number;
   sum: number;
 }
-export class Butn {
-  gcode: string;
-  price: number;
-  stock: number;
-}
 
 @Component({
   selector: 'ons-page',
   templateUrl: './tab02.component.html'
 })
-export class Tab02Component {
+export class Tab02Component implements OnInit {
   public sum:number = 0;
   public azu:number = 0;
   public items: List[]= new Array();
-  public goods: Butn[]= [{
-    gcode: "テスト",
-    price: 1000,
-    stock: 10,
-  },
-  {
-    gcode: "テスト2",
-    price: 1111,
-    stock: 20,
-  }
-  ,{
-    gcode: "テスト3",
-    price: 1300,
-    stock: 10,
-  }];
+  public goods: Goods[];
 
-  constructor() { }
+  constructor(private goodsservice: GoodsService) { }
+
+  ngOnInit(){}
 
   addList(Gds :string, Prc :number) {
     var i:number = this.items.findIndex(k => k.gds==Gds)
@@ -50,7 +34,6 @@ export class Tab02Component {
       this.items[i].sum = this.items[i].prc * this.items[i].cnt;
       this.sum += this.items[i].sum;
     }
-
   }
   delList(i :number) {
     this.sum -= this.items[i].sum;
